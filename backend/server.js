@@ -3,11 +3,17 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import mysql from "mysql2/promise";
-import pool from'./config/db.config.js'
+import pool from'./config/db.config.js';
+import router from'./routes/index.js';
 
 const app= express();
 app.use(cors());
 app.use(express.json()); 
+app.use(router);
+
+
+
+
 
 const PORT=process.env.port;
 
