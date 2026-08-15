@@ -1,30 +1,24 @@
-
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-
-//create connection pool
+// Create connection pool
 const pool = mysql.createPool({
     host: process.env.db_host,
     user: process.env.db_user,
     password: process.env.db_password,
     database: process.env.db_name,
-    port: process.env.server_port,
-
+    // port: process.env.db_port || 3306, // Points to MySQL port 3306
     connectionLimit: 10,
+});
 
-})
+// Prepare a function that will execute the SQL queries asynchronously
+export async function query(sql, data) {
+  const [rows, fields] = await pool.execute(sql, data);
+  return rows;
+}
 
-const dbAccess= pool.promise();
+// query();
 
-//start connection
-pool.getConnection((err, connection) => {
-    if(err){
-        throw err;
-    } 
-    console.log("database connected successfully");
-})
-
-export default dbAccess;
+export default pool;
