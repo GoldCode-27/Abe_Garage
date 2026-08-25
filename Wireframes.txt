@@ -24,6 +24,6 @@ For now, we only need the navigation structure. Which we have already identified
       - Add vehicle (/admin/customer/{customerId}) - Conditionally displayed on the customer details page  
       - Orders (/admin/orders) 
       - Add order (/admin/order) 
-      - Edit order (/admin/order/{orderHash}/edit) 
+      - Edit order (/admin/order/{orderHash}/edit) 1` \
       - Services (/admin/services) 
       - Add service (/admin/add-service) 

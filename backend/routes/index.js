@@ -7,6 +7,8 @@ import employeeRoutes from'../routes/employee.route.js';
 //import login route
 import loginRoutes from'../routes/login.routes.js';
 
+
+
 //Add the employee routes to the main router
 router.use(employeeRoutes);
 //Add the login routes to the main router

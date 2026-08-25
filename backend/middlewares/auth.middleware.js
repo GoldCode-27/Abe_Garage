@@ -4,7 +4,7 @@ import dotenv from'dotenv';
  dotenv.config();
 // Import the jsonwebtoken package
 import jwt from"jsonwebtoken";
-// A function to verify the token received from the frontend 
+
 // Import the employee service 
 import employeeService from'../services/employee.service.js';
 

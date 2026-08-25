@@ -6,5 +6,7 @@ const router = express.Router();
 import loginControllers from'../controllers/login.controller.js';
 // Create a route to handle the login request on post
 router.post("/api/employee/login", loginControllers.logIn);
+
+
 // Export the router
 export default router;

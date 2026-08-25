@@ -2,7 +2,6 @@ API End points
 -------------- 
   - You can put this on a shared google doc or create an HTML page for it so that the entire team can access the same documentation. 
 
-
   ** - Employees 
     GET All
       Query: 

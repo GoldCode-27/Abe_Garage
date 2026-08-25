@@ -1,23 +1,21 @@
-//import installService to handle communication with database 
-import installService from'../services/install.services'
-//create a function to handle a install request 
-async function install(req, res, next){
-//call the installService to install the database
-const installMessage = await installService.install();
-//check if the install was successfull or not and send approprait message to the client
-if(installMessage.status === 200){
-    //if successfull, send a response to the client 
+// Import the install service to handle communication with the database
+const installService = require('../services/install.service');
+// Create a function to handle the install request 
+async function install(req, res, next) {
+  // Call the install service to create the database tables 
+  const installMessage = await installService.install();
+  // Check if the install was successful or not and send the appropriate response to the client
+  if (installMessage.status === 200) {
+    // If successful, send a response to the client 
     res.status(200).json({
-        message: installMessage
+      message: installMessage
     });
-}else{
-    //is unsuccessfull, send a responce to a client 
+  } else {
+    // If unsuccessful, send a response to the client 
     res.status(500).json({
-        message:installMesage
+      message: installMessage
     });
-
- }
+  }
 }
-
-//export the install function
-export default install
+// Export the install function
+module.exports = { install };
