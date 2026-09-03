@@ -48,6 +48,8 @@ const isAdmin = async (req, res, next) => {
   }
 }
 
+// tenderclient
+
 const authMiddleware = {
   verifyToken,
   isAdmin
