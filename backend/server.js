@@ -13,10 +13,16 @@ app.use(router);
 
 const PORT=process.env.PORT;
 
+const StartServer = async ()=>{
+
+const connection = await pool.getConnection();
+
+console.log("DB connected successfully.");
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);
-})
-
+ })
+}
+StartServer();
 
 
 
