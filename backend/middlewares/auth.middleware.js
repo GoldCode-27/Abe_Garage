@@ -38,7 +38,8 @@ const isAdmin = async (req, res, next) => {
   console.log(req.employee_email);
   const employee_email = req.employee_email;
   const employee = await employeeService.getEmployeeByEmail(employee_email);
-  if (employee[0].company_role_id === 3) {
+  // console.log(employee)
+  if (employee[0] [0].company_role_id == 3) {
     next();
   } else {
     return res.status(403).send({
@@ -49,7 +50,6 @@ const isAdmin = async (req, res, next) => {
 }
 
 // tenderclient
-
 const authMiddleware = {
   verifyToken,
   isAdmin
