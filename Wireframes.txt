@@ -1,5 +1,4 @@
 For now, we only need the navigation structure. Which we have already identified 
-
   - Navigation links on our app 
     - Root level public pages  
       - Home page (/) - DONE!!  
